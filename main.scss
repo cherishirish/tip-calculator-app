@@ -18,7 +18,7 @@ $font-smaller: 7px;
 $font-bigger:25px;
 
 @mixin desktop {
-    @media (min-width: 376px) {
+    @media (min-width: 400px) {
       @content;
     }
   }
