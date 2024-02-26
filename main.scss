@@ -1,0 +1,253 @@
+// @cherishirish
+
+$primary-color:  hsl(172, 67%, 45%);
+$active-color: hsl(172.6, 61.34%, 76.67%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(202.5, 50%, 96.86%);
+$white: hsl(0, 0%, 100%);
+$font-size: 24px;
+$font: "Space Mono", monospace;
+$font-weight: 700;
+// $mobile: 375px;
+// $desktop: 1440px;
+$font-small: 9px;
+$font-smaller: 7px;
+$font-bigger:25px;
+
+@mixin desktop {
+    @media (min-width: 376px) {
+      @content;
+    }
+  }
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $light-grayish-cyan;
+    font-family: $font;
+    font-weight: 700;
+    color: $dark-grayish-cyan;
+}
+//the container
+.container {
+    padding-top: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include desktop {
+        height: 100vh;
+        padding: 0;
+    }
+    
+
+//the logo
+    #{&}__logo{
+        @include desktop {
+            margin-bottom: 30px;
+
+            img {
+                width:100%;
+            }
+        }
+            padding: 20px;
+        img{
+           
+            max-width: 100%;
+        }
+    }
+}
+
+
+//the app
+.app {
+    width: 100%;
+    background-color: $white;
+    border-radius: 25px 25px 0 0 ;
+    padding: 20px;
+
+    @include desktop {
+        width: 600px;
+        display: flex;
+        gap: 20px;
+        padding: 10px 30px 30px 30px;
+        border-radius: 25px;
+        
+        .app-div {
+            width: 50%;
+        }
+    }
+
+    #{&}__bill {
+        margin: 8px 0;
+        padding: 15px 0;
+    }
+
+    #{&}__tip-container {
+        margin: 8px 0;
+
+        
+        .select-tip-container {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            @include desktop {
+                width: 100%;
+                grid-template-columns: 30% 30% 30%;
+                gap: 13px;
+            
+            }
+        }
+        .select-tip{
+            border-radius: 2px;
+            text-align: center;
+            margin: 5px;
+            background-color: $very-dark-cyan;
+            color: $white;
+            padding: 2px 0;
+            @include desktop {
+                margin: 0;
+                padding: 5px;
+                border-radius: 5px;
+                
+            }
+          
+        }
+        .selected {
+            background-color: $active-color;
+            color: $very-dark-cyan;
+        }
+
+        #custom-tip {
+            border: 2px solid white;
+            font-family: $font;
+            color: $dark-grayish-cyan;
+            border: none;
+            padding: 6px;
+            width: 90%;
+            background-color: $very-light-grayish-cyan;
+            font-weight: $font-weight;
+            text-align: right;
+        }
+        #custom-tip:focus {
+            outline: 2px solid $active-color;
+        }
+        }
+    
+
+
+
+    #{&}__total-bill {
+
+
+        border-radius: 10px;
+        margin-top:20px;
+        background-color: $very-dark-cyan;
+        color: white;
+        padding: 15px;
+        @include desktop {
+            padding: 20px 30px;
+        }
+
+        h4 {
+            font-size: $font-small;
+        }
+        p {
+            font-size: $font-smaller;
+            color: $grayish-cyan;
+        }
+
+        .total-bill-comp {
+            padding-top: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            @include desktop {
+                align-items: center;
+            }
+        }
+        .total-bill-amount {
+            color: $primary-color;
+            @include desktop {
+                font-size: $font-bigger;
+            }
+        }
+
+        button {
+            width: 100%;
+            padding: 5px;
+            text-transform: uppercase;
+            font-family: $font;
+            font-size: $font-small;
+            font-weight: $font-weight;
+            color: $very-dark-cyan;
+            background-color: $primary-color;
+            border: none;
+            border-radius: 5px;
+            @include desktop {
+                padding: 5px;
+                font-size: 14px;
+                margin-top: 65px;
+            }
+        }
+        button:hover {
+            background-color: $active-color;
+            
+        }
+    }
+   
+
+    
+}
+
+ //STYLE FOR ALL "INPUT"
+ .input-type {
+    background-color: $very-light-grayish-cyan;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+    
+    img {
+        width: 8px;
+    }
+    input[type=text]{
+        width: 80%;
+        background-color: $very-light-grayish-cyan;
+        border: none;
+        font-family: $font;
+        font-weight: $font-weight;
+        color: $very-dark-cyan;
+        text-align: right;
+    }
+    input:focus {
+        outline: none;
+    }
+}
+.custom-border {
+    border: 2px solid $active-color;
+}
+#people-error{
+    color: red;
+}
+.error-border {
+    border: 2px solid red;
+}
+
+// STYLE FOR ALL "HEADING-NAME"
+.heading-name {
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: $font-small;
+
+}

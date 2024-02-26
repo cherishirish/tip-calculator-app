@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: hsl(186, 14%, 43%);
+}
+
+.container {
+  padding-top: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 376px) {
+  .container {
+    height: 100vh;
+    padding: 0;
+  }
+}
+.container .container__logo {
+  padding: 20px;
+}
+@media (min-width: 376px) {
+  .container .container__logo {
+    margin-bottom: 30px;
+  }
+  .container .container__logo img {
+    width: 100%;
+  }
+}
+.container .container__logo img {
+  max-width: 100%;
+}
+
+.app {
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 25px 25px 0 0;
+  padding: 20px;
+}
+@media (min-width: 376px) {
+  .app {
+    width: 600px;
+    display: flex;
+    gap: 20px;
+    padding: 10px 30px 30px 30px;
+    border-radius: 25px;
+  }
+  .app .app-div {
+    width: 50%;
+  }
+}
+.app .app__bill {
+  margin: 8px 0;
+  padding: 15px 0;
+}
+.app .app__tip-container {
+  margin: 8px 0;
+}
+.app .app__tip-container .select-tip-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+@media (min-width: 376px) {
+  .app .app__tip-container .select-tip-container {
+    width: 100%;
+    grid-template-columns: 30% 30% 30%;
+    gap: 13px;
+  }
+}
+.app .app__tip-container .select-tip {
+  border-radius: 2px;
+  text-align: center;
+  margin: 5px;
+  background-color: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  padding: 2px 0;
+}
+@media (min-width: 376px) {
+  .app .app__tip-container .select-tip {
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+.app .app__tip-container .selected {
+  background-color: hsl(172.6, 61.34%, 76.67%);
+  color: hsl(183, 100%, 15%);
+}
+.app .app__tip-container #custom-tip {
+  border: 2px solid white;
+  font-family: "Space Mono", monospace;
+  color: hsl(186, 14%, 43%);
+  border: none;
+  padding: 6px;
+  width: 90%;
+  background-color: hsl(202.5, 50%, 96.86%);
+  font-weight: 700;
+  text-align: right;
+}
+.app .app__tip-container #custom-tip:focus {
+  outline: 2px solid hsl(172.6, 61.34%, 76.67%);
+}
+.app .app__total-bill {
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: hsl(183, 100%, 15%);
+  color: white;
+  padding: 15px;
+}
+@media (min-width: 376px) {
+  .app .app__total-bill {
+    padding: 20px 30px;
+  }
+}
+.app .app__total-bill h4 {
+  font-size: 9px;
+}
+.app .app__total-bill p {
+  font-size: 7px;
+  color: hsl(184, 14%, 56%);
+}
+.app .app__total-bill .total-bill-comp {
+  padding-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (min-width: 376px) {
+  .app .app__total-bill .total-bill-comp {
+    align-items: center;
+  }
+}
+.app .app__total-bill .total-bill-amount {
+  color: hsl(172, 67%, 45%);
+}
+@media (min-width: 376px) {
+  .app .app__total-bill .total-bill-amount {
+    font-size: 25px;
+  }
+}
+.app .app__total-bill button {
+  width: 100%;
+  padding: 5px;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+  border: none;
+  border-radius: 5px;
+}
+@media (min-width: 376px) {
+  .app .app__total-bill button {
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 65px;
+  }
+}
+.app .app__total-bill button:hover {
+  background-color: hsl(172.6, 61.34%, 76.67%);
+}
+
+.input-type {
+  background-color: hsl(202.5, 50%, 96.86%);
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+.input-type img {
+  width: 8px;
+}
+.input-type input[type=text] {
+  width: 80%;
+  background-color: hsl(202.5, 50%, 96.86%);
+  border: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  color: hsl(183, 100%, 15%);
+  text-align: right;
+}
+.input-type input:focus {
+  outline: none;
+}
+
+.custom-border {
+  border: 2px solid hsl(172.6, 61.34%, 76.67%);
+}
+
+#people-error {
+  color: red;
+}
+
+.error-border {
+  border: 2px solid red;
+}
+
+.heading-name {
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 9px;
+}/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <title>Tip Calculator App</title>
+
+</head>
+<body>
+  <div class="container">
+
+    <div class="container__logo">
+    <img src="images/logo.svg" width="70" height="40" alt="">
+    </div> 
+    
+    <div class="app">
+
+      <div class="app-div"><!--div for desktop view -->
+          <div class="app__bill" id="app__bill">
+              <div class="heading-name">Bill</div>
+              <div class="input-type">
+                <img src="images/icon-dollar.svg">
+                <input type="text" id="bill-amount" class="input-field" placeholder="0">
+              </div>
+            </div>
+
+          <div class="app__tip-container">
+            <div class="heading-name">Select Tip %</div>
+            
+            <div class="select-tip-container">
+              <div class="select-tip" tabindex="0">5%</div>
+              <div class="select-tip" tabindex="0">10%</div>
+              <div class="select-tip" tabindex="0">15%</div>
+              <div class="select-tip" tabindex="0">25%</div>
+              <div class="select-tip" tabindex="0">50%</div>
+              <div>
+              <input class="select-tip" type="text" id="custom-tip" placeholder="Custom">
+              </div>
+            </div>
+          </div>
+
+          <div class="app__number-people">
+            <div class="heading-name">
+              <div class="heading-name">Number of People</div>
+              <div id="people-error"></div>
+            </div>
+              <div class="input-type">
+                <img src="images/icon-person.svg">
+              <input type="text" name="num-people" id="num-people" 
+              class="input-field" placeholder="0">
+              </div>
+          </div>
+      </div>
+
+       <div class="app-div"> <!--div for desktop view -->
+          <div class="app__total-bill">
+
+            <div class="total-bill-comp">
+              <div>
+                <h4>Tip Amount</h4>
+                <p>/ person</p>
+              </div>
+              <div>
+                <div class="total-bill-amount">
+                  $<span id="tipAmount">0.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="total-bill-comp">
+              <div>
+                <h4>Total</h4>
+                <p>/ person</p>
+              </div>
+
+              <div>
+                <div class="total-bill-amount">
+                  $<span id="totalAmount">0.00</span>
+                </div>
+              </div>
+            </div>
+
+            <button id="btnReset">Reset</button>
+          </div>
+    </div>
+
+
+    </div> <!--end of app-->
+  </div> <!--end of container-->
+  <script src="app.js"></script>
+</body>
+</html>
