@@ -1,4 +1,5 @@
 // @cherishirish
+// mobile-first
 
 $primary-color:  hsl(172, 67%, 45%);
 $active-color: hsl(172.6, 61.34%, 76.67%);
@@ -11,19 +12,19 @@ $white: hsl(0, 0%, 100%);
 $font-size: 24px;
 $font: "Space Mono", monospace;
 $font-weight: 700;
-// $mobile: 375px;
-// $desktop: 1440px;
-$font-small: 9px;
-$font-smaller: 7px;
-$font-bigger:25px;
+$font-small: 15px;
+$font-smaller: 12px;
+$font-bigger:40px;
+$font-amount:30px;
+$font-desktop: 18px;
 
 @mixin desktop {
+    //made this one as 400px
+    //easier to view
     @media (min-width: 400px) {
       @content;
     }
   }
-
-
 
 
 * {
@@ -37,84 +38,105 @@ body {
     font-weight: 700;
     color: $dark-grayish-cyan;
 }
+
+
 //the container
 .container {
-    padding-top: 50px;
+
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+
     @include desktop {
         height: 100vh;
         padding: 0;
+        justify-content: center;
     }
     
 
 //the logo
     #{&}__logo{
+        padding: 40px 0;
+        //padding of logo top and bottom
+        img{
+           
+            max-width: 100%;
+        }
+
         @include desktop {
+            margin-top: 0;
+            padding-top: 0;
+            padding-bottom: 50px;
             margin-bottom: 30px;
 
             img {
                 width:100%;
             }
         }
-            padding: 20px;
-        img{
-           
-            max-width: 100%;
-        }
+
+            
     }
 }
 
 
 //the app
 .app {
+    
     width: 100%;
     background-color: $white;
     border-radius: 25px 25px 0 0 ;
-    padding: 20px;
+    padding: 20px 40px;
 
     @include desktop {
-        width: 600px;
+        width: 760px;
         display: flex;
-        gap: 20px;
-        padding: 10px 30px 30px 30px;
+        gap: 30px;
+        padding: 10px 40px 30px 40px;
         border-radius: 25px;
         
         .app-div {
-            width: 50%;
+            width: 50%
         }
     }
 
     #{&}__bill {
         margin: 8px 0;
         padding: 15px 0;
+        @include desktop {
+            margin-bottom: 20px;
+        }
     }
 
     #{&}__tip-container {
         margin: 8px 0;
+      
+        @include desktop {
+            margin-bottom: 42px;
+        }
 
-        
+
         .select-tip-container {
             display: grid;
             grid-template-columns: 50% 50%;
             @include desktop {
+                margin-top: 15px;
                 width: 100%;
                 grid-template-columns: 30% 30% 30%;
-                gap: 13px;
+                gap: 10px;
             
             }
         }
         .select-tip{
-            border-radius: 2px;
+            font-size: $font-size;
+            border-radius: 5px;
             text-align: center;
-            margin: 5px;
+            margin: 7px;
             background-color: $very-dark-cyan;
             color: $white;
-            padding: 2px 0;
+            padding: 5px 0;
             @include desktop {
+                font-size: $font-desktop;
                 margin: 0;
                 padding: 5px;
                 border-radius: 5px;
@@ -133,10 +155,14 @@ body {
             color: $dark-grayish-cyan;
             border: none;
             padding: 6px;
-            width: 90%;
+            width: 92%;
             background-color: $very-light-grayish-cyan;
             font-weight: $font-weight;
             text-align: right;
+            @include desktop {
+               width: 100%;
+                
+            }
         }
         #custom-tip:focus {
             outline: 2px solid $active-color;
@@ -147,16 +173,12 @@ body {
 
 
     #{&}__total-bill {
-
-
         border-radius: 10px;
         margin-top:20px;
         background-color: $very-dark-cyan;
         color: white;
         padding: 15px;
-        @include desktop {
-            padding: 20px 30px;
-        }
+        font-size: $font-amount;
 
         h4 {
             font-size: $font-small;
@@ -165,20 +187,31 @@ body {
             font-size: $font-smaller;
             color: $grayish-cyan;
         }
+        
+        @include desktop {
+            padding: 35px 30px 30px 30px;
+        }
 
         .total-bill-comp {
             padding-top: 5px;
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
+           
             @include desktop {
                 align-items: center;
+                margin-bottom: 20px;
+
+                
             }
         }
         .total-bill-amount {
             color: $primary-color;
+            
             @include desktop {
                 font-size: $font-bigger;
+
+              
             }
         }
 
@@ -194,8 +227,8 @@ body {
             border: none;
             border-radius: 5px;
             @include desktop {
-                padding: 5px;
-                font-size: 14px;
+                padding: 10px;
+                font-size: $font-small;
                 margin-top: 65px;
             }
         }
@@ -212,17 +245,17 @@ body {
  //STYLE FOR ALL "INPUT"
  .input-type {
     background-color: $very-light-grayish-cyan;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 10px;
     border: 2px solid white;
-    
     img {
-        width: 8px;
+        width: 12px;
     }
     input[type=text]{
-        width: 80%;
+        width: 90%;
         background-color: $very-light-grayish-cyan;
         border: none;
+        font-size: $font-size;
         font-family: $font;
         font-weight: $font-weight;
         color: $very-dark-cyan;
@@ -231,7 +264,21 @@ body {
     input:focus {
         outline: none;
     }
+
+    @include desktop 
+    {
+        padding: 7px 15px;
+        img {
+            width: 10px;
+        }
+        input[type=text]{
+            font-size: $font-desktop;
+        }
+    }
 }
+
+
+
 .custom-border {
     border: 2px solid $active-color;
 }
@@ -249,5 +296,4 @@ body {
     justify-content: space-between;
     align-items: baseline;
     font-size: $font-small;
-
 }
